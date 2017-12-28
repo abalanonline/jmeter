@@ -51,7 +51,6 @@ public class LogLevelCommand extends AbstractAction {
     public void doAction(ActionEvent ev) {
         String levelString = ev.getActionCommand().substring(ActionNames.LOG_LEVEL_PREFIX.length());
         log.warn("Setting root log level: {}", levelString);
-        Configurator.setRootLevel(org.apache.logging.log4j.Level.toLevel(levelString));
     }
 
     @Override

@@ -839,7 +839,6 @@ public class JMeter implements JMeterPlugin {
                         if (name.startsWith("jmeter") || name.startsWith("jorphan")) {
                             loggerName = PACKAGE_PREFIX + name;
                         }
-                        Configurator.setAllLevels(loggerName, logLevel);
                     } else {
                         log.warn("Invalid log level, '{}' for '{}'.", value, name);
                     }
@@ -847,7 +846,6 @@ public class JMeter implements JMeterPlugin {
                     log.warn("LogLevel: {}", name);
                     final Level logLevel = Level.getLevel(name);
                     if (logLevel != null) {
-                        Configurator.setRootLevel(logLevel);
                     } else {
                         log.warn("Invalid log level, '{}', for the root logger.", name);
                     }

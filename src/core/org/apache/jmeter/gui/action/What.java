@@ -73,11 +73,9 @@ public class What extends AbstractAction {
             }
         } else if (ActionNames.DEBUG_ON.equals(e.getActionCommand())) {
             final String loggerName = te.getClass().getName();
-            Configurator.setAllLevels(loggerName, Level.DEBUG);
             log.info("Log level set to DEBUG for {}", loggerName);
         } else if (ActionNames.DEBUG_OFF.equals(e.getActionCommand())){
             final String loggerName = te.getClass().getName();
-            Configurator.setAllLevels(loggerName, Level.INFO);
             log.info("Log level set to INFO for {}", loggerName);
         } else if (ActionNames.HEAP_DUMP.equals(e.getActionCommand())){
             try {

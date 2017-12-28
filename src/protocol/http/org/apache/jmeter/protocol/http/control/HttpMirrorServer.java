@@ -231,7 +231,6 @@ public class HttpMirrorServer extends Thread implements Stoppable, NonTestElemen
         }
 
         if (System.getProperty("log4j.configurationFile") == null) {// $NON-NLS-1$
-            Configurator.setRootLevel(Level.INFO);
         }
 
         List<CLOption> clOptions = parser.getArguments();
@@ -250,7 +249,6 @@ public class HttpMirrorServer extends Thread implements Stoppable, NonTestElemen
                             loggerName = "org.apache." + name;// $NON-NLS-1$
                         }
                         getLogger().info("Setting log level to " + value + " for " + loggerName);// $NON-NLS-1$ // $NON-NLS-2$
-                        Configurator.setAllLevels(loggerName, logLevel);
                     } else {
                         getLogger().warn("Invalid log level, '" + value + "' for '" + name + "'.");// $NON-NLS-1$ // $NON-NLS-2$
                     }
@@ -258,7 +256,6 @@ public class HttpMirrorServer extends Thread implements Stoppable, NonTestElemen
                     final Level logLevel = Level.getLevel(name);
                     if (logLevel != null) {
                         getLogger().info("Setting root log level to " + name);// $NON-NLS-1$
-                        Configurator.setRootLevel(logLevel);
                     } else {
                         getLogger().warn("Invalid log level, '" + name + "' for the root logger.");// $NON-NLS-1$ // $NON-NLS-2$
                     }
